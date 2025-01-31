@@ -1,0 +1,24 @@
+@startuml
+start
+:Login ke Sistem;
+if (Kondisional) then (Admin)
+  :Akses sebagai Admin;
+  :Pilih menu yang diinginkan;
+  if (MENU ?) then (Kelola Data Pelanggan)
+    :Tambah/Edit/Hapus data pelanggan;
+    :Simpan perubahan ke database;
+  else if (Kelola Order)
+    :Tambah/Edit/Hapus order;
+    :Simpan perubahan ke database;
+  else if (Lihat Daftar Order)
+    :Tampilkan daftar order;
+  endif
+else (Pelanggan)
+  :Akses sebagai Pelanggan;
+  :Pilih menu Riwayat Pesanan;
+  :Tampilkan daftar order;
+  :Pilih detail order;
+  :Tampilkan detail Pesanan;
+endif
+stop
+@enduml

@@ -1,0 +1,32 @@
+@startuml pert2
+left to right direction
+
+actor User as user
+package Restoran {
+    actor Servant as serv
+    actor Chief as chief
+}
+
+package Restoran {
+    usecase "Pesan Menu" as U1
+    usecase "Bayar Menu" as U2
+    usecase "Melaporkan Pesanan" as U3
+    usecase "Memasak Pesanan" as U4
+    usecase "Mengirim Pesanan" as U5
+    usecase "Menerima Pesanan" as U6
+}
+
+user --> U1
+U1 --> serv : Memesan
+serv --> U3 : Melaporkan
+U3 --> chief : Melaporkan
+chief --> U4 : Memasak
+U4 --> serv 
+serv --> U5 : Mengirim
+U5 --> user
+user --> U6 
+U6 --> U2
+
+
+
+@enduml

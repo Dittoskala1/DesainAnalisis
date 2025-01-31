@@ -1,0 +1,21 @@
+@startuml
+actor Admin
+actor Pelanggan
+
+usecase "Mengelola Data Pelanggan" as U1
+usecase "Menambah Order" as U2
+usecase "Mengubah Order" as U3
+usecase "Menghapus Order" as U4
+usecase "Melihat Daftar Order" as U5
+usecase "Melihat Detail Order" as U6
+
+Admin --> U1
+Admin --> U2
+Admin --> U3
+Admin --> U4
+Admin --> U5
+Admin --> U6
+
+Pelanggan --> U5
+Pelanggan --> U6
+@enduml
