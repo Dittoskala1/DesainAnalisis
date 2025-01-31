@@ -1,0 +1,32 @@
+@startuml
+start
+
+:Admin Login;
+:Autentikasi Admin;
+if (Login Valid?) then (yes)
+  :Dashboard Admin;
+  while (Pilih Menu?) is (yes)
+    :Kelola Mata Pelajaran?;
+    if (Kelola Mata Pelajaran?) then (yes)
+      :Menambah/Edit/Hapus Mata Pelajaran;
+    endif
+
+    :Unggah Materi Pembelajaran?;
+    if (Unggah Materi Pembelajaran?) then (yes)
+      :Mengunggah Materi (PDF);
+    endif
+
+    :Kelola Akun Siswa?;
+    if (Kelola Akun Siswa?) then (yes)
+      :Meninjau/Mengelola Akun Siswa;
+    endif
+
+    :Logout;
+  endwhile
+else (no)
+  :Tampilkan pesan error;
+  :Kembali ke Login;
+endif
+
+stop
+@enduml

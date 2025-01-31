@@ -1,0 +1,43 @@
+@startuml
+entity "Admin" as admin {
+  +ID_Admin: int
+  +Nama_Admin: string
+  +Email: string
+  +Password: string
+}
+
+entity "Mata Pelajaran" as mata_pelajaran {
+  +ID_MataPelajaran: int
+  +Nama_MataPelajaran: string
+  +Deskripsi: string
+  +Jam_Pelajaran: string
+  +Hari_Pelajaran: string
+  +Tanggal_Update: date
+}
+
+entity "Materi Pembelajaran" as materi_pembelajaran {
+  +ID_Materi: int
+  +Judul_Materi: string
+  +Deskripsi_Materi: string
+  +Link_PDF: string
+}
+
+entity "Sisw@_MataPelajaran" as siswamatapelajaran {
+  +ID_Siswa: int
+  +ID_MataPelajaran: int
+}
+
+entity "Siswa" as siswa {
+  +ID_Siswa: int
+  +Nama_Siswa: string
+  +Email: string
+  +Password: string
+}
+
+admin --|> mata_pelajaran : Mengelola
+mata_pelajaran --|> siswamatapelajaran : Tersedia
+siswamatapelajaran --|> siswa : Terkait
+materi_pembelajaran --|> mata_pelajaran : Memiliki
+siswamatapelajaran --|> materi_pembelajaran : Memilih
+
+@enduml

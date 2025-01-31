@@ -1,0 +1,35 @@
+@startuml
+start
+
+:Siwa Login;
+:Autentikasi Siswa;
+if (Login Valid?) then (yes)
+  :Dashboard Siswa;
+  while (Pilih Menu?) is (yes)
+    :Keluar?;
+    if (Keluar?) then (yes)
+      :Logout;
+    else
+      :Lihat Daftar Mata Pelajaran?;
+      if (Lihat Daftar Mata Pelajaran?) then (yes)
+        :Menampilkan Daftar Mata Pelajaran;
+      endif
+
+      :Akses Materi Pembelajaran?;
+      if (Akses Materi Pembelajaran?) then (yes)
+        :Membuka Materi Pembelajaran (PDF);
+      endif
+
+      :Unduh Materi?;
+      if (Unduh Materi?) then (yes)
+        :Mengunduh Materi Pembelajaran (PDF);
+      endif
+    endif
+  endwhile
+else (no)
+  :Tampilkan pesan error;
+  :Kembali ke Login;
+endif
+
+stop
+@enduml

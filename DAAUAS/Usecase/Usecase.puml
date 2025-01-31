@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+actor Admin
+actor Siswa
+
+rectangle "Sistem E-Learning Sederhana" {
+  Admin --> (Manajemen Mata Pelajaran)
+  Admin --> (Mengelola Akun Siswa)
+  Admin --> (Mengunggah Materi Pembelajaran)
+  Admin --> (Login)
+  Admin --> (Logout)
+  
+  Siswa --> (Mengakses Materi Pembelajaran)
+  Siswa --> (Melihat Daftar Mata Pelajaran)
+  Siswa --> (Mengunduh Materi Pembelajaran)
+  Siswa --> (Login)
+  Siswa --> (Logout)
+}
+
+@enduml

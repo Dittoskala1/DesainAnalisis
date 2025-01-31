@@ -1,0 +1,26 @@
+@startuml
+start
+
+:Login;
+if (Login Valid?) then (yes)
+  :Autentikasi Pengguna;
+  if (Admin atau Siswa?) then (Admin)
+    :Dashboard Admin;
+    :Manajemen Mata Pelajaran;
+    :Mengunggah Materi Pembelajaran;
+    :Mengelola Akun Siswa;
+    :Logout;
+  else (Siswa)
+    :Dashboard Siswa;
+    :Melihat Daftar Mata Pelajaran;
+    :Mengakses Materi Pembelajaran;
+    :Mengunduh Materi Pembelajaran;
+    :Logout;
+  endif
+else (no)
+  :Tampilkan pesan error;
+  :Masukan username password yang valid;
+endif
+
+stop
+@enduml
